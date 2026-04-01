@@ -4,7 +4,7 @@
     
     <Page id="page" title="I am View1">
     <content>
-    <Text id="one" text="I am button"></Text>
+    <Button text="Go to second view" press="onPress"></Button>
     </content>
         
     </Page>
