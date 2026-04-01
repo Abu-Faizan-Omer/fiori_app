@@ -1,10 +1,38 @@
 <mvc:View controllerName="com.demo.sapui5.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m" xmlns:l="sap.ui.layout">
+    xmlns="sap.m" 
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
     
     <Page id="page" title="I am View1">
         <content>
-        <Panel headerText="Employee Details" expandable="true" expanded="true">
+        <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
+            lableSpanL="3" lableSpanM="3" emptySpanL="4" emptySpanM="4">
+
+            
+            <f:content>
+                <Label text="Employee Id"></Label>
+                <Input ></Input>
+                 <Label text="Employee Name"></Label>
+                <Input ></Input>
+                 <Label text="Employee Designation"></Label>
+                <Input ></Input>
+                 <Label text="Employee Skill"></Label>
+                <Input ></Input>
+                 <Label text="Employee Email"></Label>
+                <Input ></Input>
+                 <Label text="Employee Phone No."></Label>
+                <Input ></Input>
+            </f:content>
+        </f:SimpleForm>
+
+
+
+
+
+
+        <!-- //          THis is grid form        ////// -->
+        <!-- <Panel headerText="Employee Details" expandable="true" expanded="true">
             <l:Grid defaultSpan="L6 M6" vSpacing="0" >
                 <l:content>
                     <Label text="Employee ID" class="sapUiTinyMarginTop"></Label>
@@ -114,7 +142,7 @@
                 </l:content>
 
             </l:Grid>
-          </Panel>
+          </Panel> -->
     
         </content>
         
