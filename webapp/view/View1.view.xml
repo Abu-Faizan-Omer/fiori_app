@@ -4,8 +4,26 @@
     
     <Page id="page" title="I am View1">
     <content>
-    <Button text="Go to second view" press="onPress"></Button>
+    <Text text="Welcome to SAPUI5" textAlign="Center" width="100%" class="sapMH1FontSize"></Text>
+
+    <Label text="Enter your name" required="true" class="sapUiTinyMarginBegin"></Label>
+    <Input  width="30%" maxLength="10" value="Faizan" class="sapUiTinyMarginBegin"></Input>
+
+<!-- //green button type=reject is red color-->
+
+    <Button text="Submit" type="Emphasized" class="sapUiTinyMarginBegin"></Button>
+
+    <!-- <Button text="Go to second view" press="onPress"></Button> -->
     </content>
+
+    <footer>
+        <Bar>
+            <contentRight>
+                <Button text="Go to 2nd View" press="onPress"></Button>
+            
+            </contentRight>
+        </Bar>
+    </footer>
         
     </Page>
     
