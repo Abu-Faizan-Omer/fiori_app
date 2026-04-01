@@ -7,21 +7,27 @@
     <Page id="page" title="I am View1">
         <content>
         <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="3" lableSpanM="3" emptySpanL="4" emptySpanM="4">
+            lableSpanL="5" lableSpanM="5" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="2">
 
             
             <f:content>
+                <core:Title text="Basic Details"></core:Title>
                 <Label text="Employee Id"></Label>
                 <Input ></Input>
                  <Label text="Employee Name"></Label>
                 <Input ></Input>
                  <Label text="Employee Designation"></Label>
                 <Input ></Input>
-                 <Label text="Employee Skill"></Label>
-                <Input ></Input>
+
+                <core:Title text="Other Details"></core:Title>
+                 
                  <Label text="Employee Email"></Label>
                 <Input ></Input>
                  <Label text="Employee Phone No."></Label>
+                <Input ></Input>
+
+                <core:Title text="Employee Skill"></core:Title>
+                <Label text="Employee Skill"></Label>
                 <Input ></Input>
             </f:content>
         </f:SimpleForm>
