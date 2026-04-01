@@ -1,29 +1,122 @@
 <mvc:View controllerName="com.demo.sapui5.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m" xmlns:l="sap.ui.layout">
     
     <Page id="page" title="I am View1">
-    <content>
-    <Text id="idTxtWelcome" text="Welcome to SAPUI5" textAlign="Center" width="100%" class="sapMH1FontSize"></Text>
+        <content>
+        <Panel headerText="Employee Details" expandable="true" expanded="true">
+            <l:Grid defaultSpan="L6 M6" vSpacing="0" >
+                <l:content>
+                    <Label text="Employee ID" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Name" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Designation" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Skill" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Email Id" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Phone No" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                </l:content>
 
-    <Label id="idLblName" text="Enter your name" required="true" class="sapUiTinyMarginBegin"></Label>
-    <Input id="idIpName" width="30%" value="faizan" maxLength="10"  class="sapUiTinyMarginBegin" enabled="true"></Input>
+            </l:Grid>
+          </Panel>  
 
-<!-- //green button type=reject is red color-->
+          <Panel headerText="Family Details (2 fields per row)" expandable="true" >
+            <l:Grid defaultSpan="L3 M3" vSpacing="0" >
+                <l:content>
+                    <Label text="Employee ID" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Name" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Designation" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Skill" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Email Id" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Phone No" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                </l:content>
 
-    <Button id="idBtnSubmit" text="Submit" type="Emphasized" class="sapUiTinyMarginBegin" press="onSubmit"></Button>
+            </l:Grid>
+          </Panel>  
 
-    <!-- <Button text="Go to second view" press="onPress"></Button> -->
-    </content>
+          <Panel headerText="Personal  Details (3 fields per row)" expandable="true" >
+            <l:Grid defaultSpan="L2 M2" vSpacing="0" >
+                <l:content>
+                    <Label text="Employee ID" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Name" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Designation" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Skill" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Email Id" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                    <Label text="Employee Phone No" class="sapUiTinyMarginTop"></Label>
+                    <Input ></Input>
+                </l:content>
 
-    <footer>
-        <Bar>
-            <contentRight>
-                <Button text="Go to 2nd View" press="onPress"></Button>
-            
-            </contentRight>
-        </Bar>
-    </footer>
+            </l:Grid>
+          </Panel>
+
+           <Panel headerText="Zig Zag Pattern"  >
+            <l:Grid  vSpacing="0" >
+                <l:content>
+                    <Label text="Employee ID" class="sapUiTinyMarginTop">
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input >
+                        <layoutData>
+                            <l:GridData span="L9 M9"></l:GridData>
+                        </layoutData>
+                    </Input>
+
+                    <Label text="Employee Skill" class="sapUiTinyMarginTop">
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input >
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Input>
+
+                    <Label text="Employee Designation" class="sapUiTinyMarginTop">
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input >
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Input>
+
+                    <Label text="Employee Address" class="sapUiTinyMarginTop">
+                        <layoutData>
+                            <l:GridData span="L3 M3"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input >
+                        <layoutData>
+                            <l:GridData span="L9 M9"></l:GridData>
+                        </layoutData>
+                    </Input>
+                    
+                </l:content>
+
+            </l:Grid>
+          </Panel>
+    
+        </content>
         
     </Page>
     
