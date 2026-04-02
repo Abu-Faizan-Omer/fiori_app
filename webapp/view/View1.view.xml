@@ -18,6 +18,17 @@
             </statuses>
         </ObjectHeader>
 
+        <IconTabBar >
+            <items>
+                <IconTabFilter icon="sap-icon://information">
+                    <Text text="I am Information Tab"></Text>
+                </IconTabFilter>
+                <IconTabFilter icon="sap-icon://notes">
+                    <Text text="I am Notes Tab"></Text>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+
 
 
 
