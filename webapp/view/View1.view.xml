@@ -1,12 +1,36 @@
 <mvc:View controllerName="com.demo.sapui5.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
     xmlns="sap.m" 
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
     
     <Page id="page" title="I am View1">
         <content>
-        <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
+<!-- //  FLexBox///// -->
+        <FlexBox justifyContent="Center"  alignItems="Center" height="100%">
+            <Button text="Go" type="Accept"></Button>
+            <Button text="Reject" type="Reject" class="sapUiTinyMarginBegin"></Button>
+        </FlexBox>
+
+<!-- //////////////////this is for horizontal button both button next to each oher//// -->
+        <!-- <HBox >
+            <Button text="Hbutton1"></Button>
+            <Button text="HButton2"></Button>
+        </HBox>
+
+        //this is for Vertical button one another down
+        <VBox >
+            <Button text="Button1"></Button>
+            <Button text="Button2"></Button>
+        </VBox> -->
+
+
+
+
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
             lableSpanL="5" lableSpanM="5" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="2">
 
             
@@ -30,9 +54,9 @@
                 <Label text="Employee Skill"></Label>
                 <Input ></Input>
             </f:content>
-        </f:SimpleForm>
+        </f:SimpleForm> -->
 
-
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 

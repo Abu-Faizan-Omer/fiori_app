@@ -13,6 +13,7 @@ sap.ui.define([
             let name = this.getView().byId("idIpName").getValue()
             let msg = "Welcome To "+ name
             this.getView().byId("idTxtWelcome").setText(msg) 
+            
             this.getView().byId("idBtnSubmit").setType("Accept")
             this.getView().byId("idTxtWelcome").setTextAlign("Left")
             this.getView().byId("idLblName").setRequired(false)
