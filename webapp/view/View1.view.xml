@@ -8,7 +8,7 @@
     <Page id="page" title="I am View1">
         <content>
 
-        <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
+        <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
             <attributes>
                 <ObjectAttribute title="Employee Id" text="10012" ></ObjectAttribute>
                 <ObjectAttribute title="Designation" text="Team Lead"></ObjectAttribute>
@@ -27,7 +27,7 @@
                     <Text text="I am Notes Tab"></Text>
                 </IconTabFilter>
             </items>
-        </IconTabBar>
+        </IconTabBar> -->
 
 
 
@@ -57,31 +57,17 @@
 
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <!-- <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="5" lableSpanM="5" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="2">
+        <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
+            lableSpanL="3" lableSpanM="3" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
 
             
             <f:content>
-                <core:Title text="Basic Details"></core:Title>
-                <Label text="Employee Id"></Label>
-                <Input ></Input>
-                 <Label text="Employee Name"></Label>
-                <Input ></Input>
-                 <Label text="Employee Designation"></Label>
-                <Input ></Input>
-
-                <core:Title text="Other Details"></core:Title>
+               
+                <Label text="Employee Id" required="true"></Label>
+                <Input id="idEmpId" ></Input>
                  
-                 <Label text="Employee Email"></Label>
-                <Input ></Input>
-                 <Label text="Employee Phone No."></Label>
-                <Input ></Input>
-
-                <core:Title text="Employee Skill"></core:Title>
-                <Label text="Employee Skill"></Label>
-                <Input ></Input>
             </f:content>
-        </f:SimpleForm> -->
+        </f:SimpleForm>
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -202,6 +188,14 @@
           </Panel> -->
     
         </content>
+
+        <footer>
+            <Bar >
+                <contentRight>
+                    <Button text="Submit" type="Accept" press="onSubmit"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
         
     </Page>
     
