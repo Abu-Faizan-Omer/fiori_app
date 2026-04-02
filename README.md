@@ -37,3 +37,8 @@ An SAP Fiori application.
 //////////////////////////////
 
 first we create view1 and view2 and their respective controller
+
+
+
+////////////////////
+Object header

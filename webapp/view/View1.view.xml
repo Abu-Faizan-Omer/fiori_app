@@ -7,11 +7,27 @@
     
     <Page id="page" title="I am View1">
         <content>
+
+        <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
+            <attributes>
+                <ObjectAttribute title="Employee Id" text="10012" ></ObjectAttribute>
+                <ObjectAttribute title="Designation" text="Team Lead"></ObjectAttribute>
+            </attributes>
+            <statuses>
+                <ObjectStatus text="Permanent" state="Success"></ObjectStatus>
+            </statuses>
+        </ObjectHeader>
+
+
+
+
+
+
 <!-- //  FLexBox///// -->
-        <FlexBox justifyContent="Center"  alignItems="Center" height="100%">
+        <!-- <FlexBox justifyContent="Center"  alignItems="Center" height="100%">
             <Button text="Go" type="Accept"></Button>
             <Button text="Reject" type="Reject" class="sapUiTinyMarginBegin"></Button>
-        </FlexBox>
+        </FlexBox> -->
 
 <!-- //////////////////this is for horizontal button both button next to each oher//// -->
         <!-- <HBox >
