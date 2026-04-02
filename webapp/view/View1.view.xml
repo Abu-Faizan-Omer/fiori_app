@@ -64,7 +64,7 @@
             <f:content>
                
                 <Label text="Employee Id" required="true"></Label>
-                <Input id="idEmpId" ></Input>
+                <Input id="idEmpId" maxLength="10" ></Input>
                  
             </f:content>
         </f:SimpleForm>
@@ -192,7 +192,7 @@
         <footer>
             <Bar >
                 <contentRight>
-                    <Button text="Submit" type="Accept" press="onSubmit"></Button>
+                    <Button text="Submit" type="Accept" press="onSubmit2"></Button>
                 </contentRight>
             </Bar>
         </footer>

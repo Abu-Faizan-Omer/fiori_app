@@ -22,7 +22,7 @@ sap.ui.define([
         // }
 
         //      this is for mandatory validation
-            onSubmit:function(){
+            onSubmit2:function(){
                 let empId = this.getView().byId("idEmpId").getValue()
 
                 if(empId ===""){
@@ -30,6 +30,26 @@ sap.ui.define([
                     this.getView().byId("idEmpId").setValueStateText("Employee Id is Mandatory Please fill it")
                 }else{
                     this.getView().byId("idEmpId").setValueState("None")
+
+
+                    //data format validation here in else part 
+                    
+                    // if(empId.length !== 10){
+                    //      this.getView().byId("idEmpId").setValueState("Error")
+                    //     this.getView().byId("idEmpId").setValueStateText("Employee Id Should be 10 Digits")
+                        
+                    // }
+                    ///////// Alphabet validation
+
+                    let regExp = /^[a-zA-z]+$/;
+                    if(!empId.match(regExp)){
+                        this.getView().byId("idEmpId").setValueState("Error")
+                    this.getView().byId("idEmpId").setValueStateText("Employee Id Must be only Alphabet ")
+                    }
+
+
+
+
                 }
             }
     });
