@@ -8,6 +8,33 @@
     <Page id="page" title="I am View1">
         <content>
 
+
+        <Table items="{oModel>/EmployeeSet}">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text="Employee List"></Title>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Employee Id"></Text>
+                </Column>
+                <Column>
+                    <Text text="Name"></Text>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{oModel>Empid}"></Text>
+                        <Text text="{oModel>Name}"></Text>
+                    </cells>
+                    
+                </ColumnListItem>
+            </items>
+        </Table>
+
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
             <attributes>
                 <ObjectAttribute title="Employee Id" text="10012" ></ObjectAttribute>
@@ -56,7 +83,7 @@
 
 
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
+<!-- 
         <f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout"
             lableSpanL="3" lableSpanM="3" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
 
@@ -67,7 +94,7 @@
                 <Input id="idEmpId" maxLength="10" ></Input>
                  
             </f:content>
-        </f:SimpleForm>
+        </f:SimpleForm> -->
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 
