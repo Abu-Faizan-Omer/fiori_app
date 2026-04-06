@@ -10,6 +10,7 @@
 
 
 <!-- //json binding -->
+        <ScrollContainer vertical="true" horizontal="true">
 
          <Table items="{empModel>/results}">
             <headerToolbar>
@@ -18,25 +19,65 @@
                 </Toolbar>
             </headerToolbar>
             <columns>
-                <Column>
+                <Column width="4rem">
+                    <Text text="SNo"></Text>
+                </Column>
+                <Column width="10rem">
                     <Text text="Employee Id"></Text>
                 </Column>
-                <Column>
+                <Column width="10rem">
                     <Text text="Name"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Desig"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Skill"></Text>
+                </Column>
+                 <Column width="15rem">
+                    <Text text="Email Id"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Phone No"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Salary"></Text>
+                </Column>
+                 <Column width="20rem">
+                    <Text text="Date of Joining"></Text>
+                </Column>
+                 <Column width="4rem">
+                    <Text text="Rating"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Status"></Text>
                 </Column>
             </columns>
 
             <items>
                 <ColumnListItem >
                     <cells>
+                        <Text text="{empModel>SNo}"></Text>
                         <Text text="{empModel>Empid}"></Text>
                         <Text text="{empModel>Name}"></Text>
+
+                        <Text text="{empModel>Design}"></Text>
+                        <Text text="{empModel>Skill}"></Text>
+                        <Text text="{empModel>Email}"></Text>
+
+                        <Text text="{empModel>Phone}"></Text>
+                        <Text text="{empModel>Salary}"></Text>
+                        <Text text="{empModel>Doj}"></Text>
+
+                        <Text text="{empModel>Rating}"></Text>
+                        <Text text="{empModel>Status}"></Text>
+                        
                     </cells>
                     
                 </ColumnListItem>
             </items>
         </Table>
-
+</ScrollContainer>
 
 <!-- //Items binding -->
         <!-- <Table items="{/EmployeeSet}">
