@@ -22,6 +22,10 @@ sap.ui.define([
             // enable routing
             this.getRouter().initialize();
 
+            this.readEmployees();
+            
+        },
+        readEmployees:function(){
             //get odata model object
 
             var oModel = this.getModel();//check who is empty model nama
@@ -39,7 +43,6 @@ sap.ui.define([
 
                 }  
             })
-            
         }
     });
 });

@@ -7,6 +7,7 @@ sap.ui.define([
     return Controller.extend("com.demo.sapui5.controller.View1", {
         f:formatter,
         onInit() {
+            this.getOwnerComponent().readEmployees();
         },
         onPress: function(){
             this.getOwnerComponent().getRouter().navTo("RouteView2")
