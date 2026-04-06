@@ -31,6 +31,7 @@ sap.ui.define([
 
                     for (let i=0;i<data.results.length;i++){
                         data.results[i].SNo = i+1
+                        data.results[i].Name= "Mr " + data.results[i].Name 
                     }
                     empModel.setData(data)
                 },

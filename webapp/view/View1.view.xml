@@ -10,7 +10,7 @@
 
 
 <!-- //json binding -->
-        <ScrollContainer vertical="true" horizontal="true">
+        <!-- <ScrollContainer vertical="true" horizontal="true">
 
          <Table items="{empModel>/results}">
             <headerToolbar>
@@ -77,34 +77,77 @@
                 </ColumnListItem>
             </items>
         </Table>
-</ScrollContainer>
+</ScrollContainer> -->
 
+<!-- // odata model -->
 <!-- //Items binding -->
-        <!-- <Table items="{/EmployeeSet}">
+             <ScrollContainer vertical="true" horizontal="true">
+
+         <Table items="{/EmployeeSet}">
             <headerToolbar>
                 <Toolbar >
                     <Title text="Employee List"></Title>
                 </Toolbar>
             </headerToolbar>
             <columns>
-                <Column>
+                
+                <Column width="10rem">
                     <Text text="Employee Id"></Text>
                 </Column>
-                <Column>
+                <Column width="10rem">
                     <Text text="Name"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Desig"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Skill"></Text>
+                </Column>
+                 <Column width="15rem">
+                    <Text text="Email Id"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Phone No"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Salary"></Text>
+                </Column>
+                 <Column width="20rem">
+                    <Text text="Date of Joining"></Text>
+                </Column>
+                 <Column width="4rem">
+                    <Text text="Rating"></Text>
+                </Column>
+                 <Column width="10rem">
+                    <Text text="Status"></Text>
                 </Column>
             </columns>
 
             <items>
                 <ColumnListItem >
                     <cells>
+                        <!-- <Text text="{SNo}"></Text> -->
                         <Text text="{Empid}"></Text>
-                        <Text text="{Name}"></Text>
+                        <Text text="{path:'Name', formatter :'.f.formatName'}"></Text>
+
+                        <Text text="{Design}"></Text>
+                        <Text text="{Skill}"></Text>
+                        <Text text="{Email}"></Text>
+
+                        <Text text="{Phone}"></Text>
+                        <Text text="{Salary}"></Text>
+                        <Text text="{Doj}"></Text>
+
+                        <Text text="{Rating}"></Text>
+                        <Text text="{Status}"></Text>
+                        
                     </cells>
                     
                 </ColumnListItem>
             </items>
-        </Table> -->
+        </Table>
+</ScrollContainer>
+
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
             <attributes>
