@@ -14,6 +14,17 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.22.0",
       "toolsId": "826a11a7-e230-4cca-bc40-8443762bed2e"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZB70_EMP_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -51,6 +62,11 @@
         "settings": {
           "bundleName": "com.demo.sapui5.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
