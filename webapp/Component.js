@@ -22,6 +22,18 @@ sap.ui.define([
             // enable routing
             this.getRouter().initialize();
 
+            //get odata model object
+
+            var oModel = this.getModel();//check who is empty model nama
+            var empModel = this.getModel("empModel");//json data give model
+            oModel.read("/EmployeeSet",{    //pull data from this 
+                success:function(data){
+                    empModel.setData(data)
+                },
+                error:function(){
+
+                }  
+            })
             
         }
     });

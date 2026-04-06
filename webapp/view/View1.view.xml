@@ -9,7 +9,9 @@
         <content>
 
 
-        <Table items="{oModel>/EmployeeSet}">
+<!-- //json binding -->
+
+         <Table items="{empModel>/results}">
             <headerToolbar>
                 <Toolbar >
                     <Title text="Employee List"></Title>
@@ -27,13 +29,41 @@
             <items>
                 <ColumnListItem >
                     <cells>
-                        <Text text="{oModel>Empid}"></Text>
-                        <Text text="{oModel>Name}"></Text>
+                        <Text text="{empModel>Empid}"></Text>
+                        <Text text="{empModel>Name}"></Text>
                     </cells>
                     
                 </ColumnListItem>
             </items>
         </Table>
+
+
+<!-- //Items binding -->
+        <!-- <Table items="{/EmployeeSet}">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text="Employee List"></Title>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Employee Id"></Text>
+                </Column>
+                <Column>
+                    <Text text="Name"></Text>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{Empid}"></Text>
+                        <Text text="{Name}"></Text>
+                    </cells>
+                    
+                </ColumnListItem>
+            </items>
+        </Table> -->
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
             <attributes>

@@ -63,10 +63,13 @@
           "bundleName": "com.demo.sapui5.i18n.i18n"
         }
       },
-      "oModel": {
+      "": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "empModel":{
+        "type":"sap.ui.model.json.JSONModel"
       }
      
     },
