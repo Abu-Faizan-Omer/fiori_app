@@ -9,11 +9,54 @@
         <content>
         <!-- //Multiple UI Element -->
 
+        <f:SimpleForm title="Multi Value UI ELements" editable="true" layout="ResponsiveGridLayout"
+            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
+
+            
+            <f:content>
+               
+                <Label text="I am Select Box" required="true"></Label>
+                <Select items="{/EmployeeSet}">
+                    <items>
+                        <core:Item text="{Name}"></core:Item>  <!--//drop down item-->
+                    </items>
+                 
+                </Select>
+
+                 <Label text="I am Combo Box" required="true"></Label>
+                <ComboBox items="{/EmployeeSet}">
+                    <items>
+                        <core:Item text="{Empid}"></core:Item>  <!--//drop down item-->
+                    </items>
+                 
+                </ComboBox>
+
+                 <Label text="I am Multi Combo Box" required="true"></Label>
+                <MultiComboBox items="{/EmployeeSet}" showSelectAll="true">
+                    <items>
+                        <core:Item text="{Design}"></core:Item>  <!--//drop down item-->
+                    </items>
+                 
+                </MultiComboBox>
+
+                 <Label text="I am Radio Button Group Box" required="true"></Label>
+                <RadioButtonGroup buttons="{/EmployeeSet}" columns="2" selectedIndex="-1">
+                    <buttons>
+                        <RadioButton text="{Status}"></RadioButton>
+                    </buttons>
+                 
+                </RadioButtonGroup>
+
+                
+                 
+            </f:content>
+        </f:SimpleForm> 
+
 
 
 
         <!-- // Composite UI element -->
-    <List items="{/EmployeeSet}">
+    <!-- <List items="{/EmployeeSet}">
         <headerToolbar>
                 <Toolbar >
                     <Title text="Employee List"></Title>
@@ -32,7 +75,7 @@
             </ObjectListItem>
         </items>
     
-    </List>
+    </List> -->
 
 
 <!-- //json binding -->
