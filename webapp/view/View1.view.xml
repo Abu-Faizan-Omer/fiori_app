@@ -7,6 +7,32 @@
     
     <Page id="page" title="I am View1">
         <content>
+        <!-- //Multiple UI Element -->
+
+
+
+
+        <!-- // Composite UI element -->
+    <List items="{/EmployeeSet}">
+        <headerToolbar>
+                <Toolbar >
+                    <Title text="Employee List"></Title>
+                </Toolbar>
+            </headerToolbar>
+
+        <items>
+            <ObjectListItem title="{Name}" number="{Salary}" numberUnit="INR">
+                <attributes>
+                    <ObjectAttribute title="Employee Id" text="{Empid}"></ObjectAttribute>
+                    <ObjectAttribute title="Designation" text="{Design}"></ObjectAttribute>
+                </attributes>
+                <firstStatus>
+                    <ObjectStatus text="{Status}" state="{path:'Status',formatter:'.f.colorStatus'}"></ObjectStatus>
+                </firstStatus>
+            </ObjectListItem>
+        </items>
+    
+    </List>
 
 
 <!-- //json binding -->
@@ -81,7 +107,7 @@
 
 <!-- // odata model -->
 <!-- //Items binding -->
-             <ScrollContainer vertical="true" horizontal="true">
+             <!-- <ScrollContainer vertical="true" horizontal="true">
 
          <Table items="{/EmployeeSet}">
             <headerToolbar>
@@ -126,12 +152,12 @@
             <items>
                 <ColumnListItem >
                     <cells>
-                        <!-- <Text text="{SNo}"></Text> -->
+                        <Text text="{SNo}"></Text>
                         <Text text="{Empid}"></Text>
                         <Text text="{path:'Name', formatter :'.f.formatName'}"></Text>
 
                         <Text text="{Design}"></Text>
-                        <!-- <Text text="{Skill}"></Text>  this is only for text -->
+                        <Text text="{Skill}"></Text>  this is only for text
                         <ObjectStatus text="{Skill}" state="{path:'Skill', formatter: '.f.colorSkill'}"></ObjectStatus>
                         <Text text="{Email}"></Text>
 
@@ -147,7 +173,7 @@
                 </ColumnListItem>
             </items>
         </Table>
-</ScrollContainer>
+</ScrollContainer> -->
 
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
