@@ -16,31 +16,31 @@
             <f:content>
                
                 <Label text="I am Select Box" required="true"></Label>
-                <Select items="{/EmployeeSet}">
+                <Select id="idSel"  items="{/EmployeeSet}" change="onSelFromSelectionBox">
                     <items>
-                        <core:Item text="{Name}"></core:Item>  <!--//drop down item-->
+                        <core:Item text="{Name}" key="{Name}"></core:Item>  <!--//drop down item-->
                     </items>
                  
                 </Select>
 
                  <Label text="I am Combo Box" required="true"></Label>
-                <ComboBox items="{/EmployeeSet}">
+                <ComboBox id="idCb" items="{/EmployeeSet}" selectionChange="onSelFromCb">
                     <items>
-                        <core:Item text="{Empid}"></core:Item>  <!--//drop down item-->
+                        <core:Item text="{Skill}" key="{Skill}"></core:Item>  <!--//drop down item-->
                     </items>
                  
                 </ComboBox>
 
                  <Label text="I am Multi Combo Box" required="true"></Label>
-                <MultiComboBox items="{/EmployeeSet}" showSelectAll="true">
+                <MultiComboBox id="idMcb" items="{/EmployeeSet}" showSelectAll="true" selectionFinish="onSelFromMcb">
                     <items>
-                        <core:Item text="{Design}"></core:Item>  <!--//drop down item-->
+                        <core:Item text="{Design}" key="{Design}"></core:Item>  <!--//drop down item-->
                     </items>
                  
                 </MultiComboBox>
 
                  <Label text="I am Radio Button Group Box" required="true"></Label>
-                <RadioButtonGroup buttons="{/EmployeeSet}" columns="2" selectedIndex="-1">
+                <RadioButtonGroup id="idRbg" buttons="{/EmployeeSet}" columns="2" selectedIndex="-1" select="onSelFromR"> 
                     <buttons>
                         <RadioButton text="{Status}"></RadioButton>
                     </buttons>
@@ -148,14 +148,12 @@
         </Table>
 </ScrollContainer> -->
 
-<!-- // odata model -->
-<!-- //Items binding -->
-             <!-- <ScrollContainer vertical="true" horizontal="true">
+             <ScrollContainer vertical="true" horizontal="true">
 
-         <Table items="{/EmployeeSet}">
+         <Table items="{/EmployeeSet}" mode="SingleSelectLeft">
             <headerToolbar>
                 <Toolbar >
-                    <Title text="Employee List"></Title>
+                    <Title text="Employee List" ></Title>
                 </Toolbar>
             </headerToolbar>
             <columns>
@@ -195,19 +193,16 @@
             <items>
                 <ColumnListItem >
                     <cells>
-                        <Text text="{SNo}"></Text>
+                        
                         <Text text="{Empid}"></Text>
                         <Text text="{path:'Name', formatter :'.f.formatName'}"></Text>
-
                         <Text text="{Design}"></Text>
-                        <Text text="{Skill}"></Text>  this is only for text
+                        
                         <ObjectStatus text="{Skill}" state="{path:'Skill', formatter: '.f.colorSkill'}"></ObjectStatus>
                         <Text text="{Email}"></Text>
-
                         <Text text="{Phone}"></Text>
                         <Text text="{Salary}"></Text>
                         <Text text="{path:'Doj',formatter:'.f.formatDate'}"></Text>
-
                         <Text text="{Rating}"></Text>
                          <ObjectStatus text="{Status}" state="{path:'Status', formatter: '.f.colorStatus'}"></ObjectStatus>
                         
@@ -216,7 +211,7 @@
                 </ColumnListItem>
             </items>
         </Table>
-</ScrollContainer> -->
+</ScrollContainer>
 
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">

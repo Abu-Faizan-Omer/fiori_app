@@ -12,6 +12,28 @@ sap.ui.define([
         onPress: function(){
             this.getOwnerComponent().getRouter().navTo("RouteView2")
         },
+        // this is for key and display text 
+          onSubmit2:function(){
+            let selBoxVal = this.getView().byId("idSel").getSelectedKey()
+            let cbVal = this.getView().byId("idCb").getSelectedKey()
+            let mcbVal = this.getView().byId("idMcb").getSelectedKeys()  //why keys because it is multiplevalue
+            let selIndex = this.getView().byId("idRbg").getSelectedIndex() //radio button give indexex
+          },
+          onSelFromSelectionBox:function(oEvent){
+            var selBoxVal= this.getView().byId("idSel").getSelectedKey()
+            //oEvent.getParameter("SelectedItem").getKey()
+          },
+          onSelFromCb:function(){
+            let cbVal = this.getView().byId("idCb").getSelectedKey()
+          },
+          onSelFromMcb:function(){
+             let mcbVal = this.getView().byId("idMcb").getSelectedKeys()
+          },
+          onSelFromRbg:function(){
+            let selIndex = this.getView().byId("idRbg").getSelectedIndex()
+          }
+
+
         //    this is for dynamic ui
         // onSubmit:function(){
         //     let name = this.getView().byId("idIpName").getValue()
@@ -25,35 +47,35 @@ sap.ui.define([
         // }
 
         //      this is for mandatory validation
-            onSubmit2:function(){
-                let empId = this.getView().byId("idEmpId").getValue()
+            // onSubmit2:function(){
+            //     let empId = this.getView().byId("idEmpId").getValue()
 
-                if(empId ===""){
-                    this.getView().byId("idEmpId").setValueState("Error")
-                    this.getView().byId("idEmpId").setValueStateText("Employee Id is Mandatory Please fill it")
-                }else{
-                    this.getView().byId("idEmpId").setValueState("None")
+            //     if(empId ===""){
+            //         this.getView().byId("idEmpId").setValueState("Error")
+            //         this.getView().byId("idEmpId").setValueStateText("Employee Id is Mandatory Please fill it")
+            //     }else{
+            //         this.getView().byId("idEmpId").setValueState("None")
 
 
-                    //data format validation here in else part 
+            //         //data format validation here in else part 
                     
-                    // if(empId.length !== 10){
-                    //      this.getView().byId("idEmpId").setValueState("Error")
-                    //     this.getView().byId("idEmpId").setValueStateText("Employee Id Should be 10 Digits")
+            //         // if(empId.length !== 10){
+            //         //      this.getView().byId("idEmpId").setValueState("Error")
+            //         //     this.getView().byId("idEmpId").setValueStateText("Employee Id Should be 10 Digits")
                         
-                    // }
-                    ///////// Alphabet validation
+            //         // }
+            //         ///////// Alphabet validation
 
-                    let regExp = /^[a-zA-z]+$/;
-                    if(!empId.match(regExp)){
-                        this.getView().byId("idEmpId").setValueState("Error")
-                    this.getView().byId("idEmpId").setValueStateText("Employee Id Must be only Alphabet ")
-                    }
-
-
+            //         let regExp = /^[a-zA-z]+$/;
+            //         if(!empId.match(regExp)){
+            //             this.getView().byId("idEmpId").setValueState("Error")
+            //         this.getView().byId("idEmpId").setValueStateText("Employee Id Must be only Alphabet ")
+            //         }
 
 
-                }
-            }
+
+
+            //     }
+            // }
     });
 });
