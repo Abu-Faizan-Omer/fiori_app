@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "com/demo/sapui5/model/formatter"
-], (Controller,formatter) => {
+    "com/demo/sapui5/model/formatter",
+     "sap/ui/model/Filter"
+], (Controller,formatter,Filter) => {
     "use strict";
 
     return Controller.extend("com.demo.sapui5.controller.View1", {
@@ -60,6 +61,20 @@ sap.ui.define([
           },
           onCloseDialog:function(){
             this.oDialog.close()
+          },
+          onPressGo:function(){
+            var aFilters = []
+            var empId = this.getView().byId("idEmpId").getValue()
+
+            if(empId!== ""){
+              aFilters.push(new Filter ("Empid","EQ",empId))
+
+            }
+            this.getView().byId("idTable").getBinding("items").filter(aFilters)
+          },
+          onPressReset:function(){
+            this.getView().byId("idEmpId").setValue("")
+            this.getView().byId("idTable").getBinding("items").filter([])
           }
 
 

@@ -7,8 +7,8 @@
     
     <Page id="page" title="I am View1">
         <content>
-
-        <f:SimpleForm title="Multi Value UI ELements" editable="true" layout="ResponsiveGridLayout"
+        <Panel headerText="Search Employees" expandable="true" expanded="true">
+            <f:SimpleForm  editable="true" layout="ResponsiveGridLayout"
             lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
 
             
@@ -19,9 +19,15 @@
                  
             </f:content>
         </f:SimpleForm> 
+        <FlexBox justifyContent="End">
+            <Button text="Go" icon="sap-icon://accept" type="Accept" press="onPressGo"></Button>
+            <Button text="Reset" icon="sap-icon://reset" type="Reject" class="sapUiTinyMarginBegin" press="onPressReset"></Button>
+        </FlexBox>
 
 
+        </Panel>
 
+        
         <!-- //Multiple UI Element -->
 <!-- 
         <f:SimpleForm title="Multi Value UI ELements" editable="true" layout="ResponsiveGridLayout"
@@ -163,7 +169,7 @@
         </Table>
 </ScrollContainer> -->
 
-             <!-- <ScrollContainer vertical="true" horizontal="true">
+             <ScrollContainer vertical="true" horizontal="true">
 
          <Table id="idTable" items="{/EmployeeSet}" mode="MultiSelect">
             <headerToolbar>
@@ -228,7 +234,7 @@
                 </ColumnListItem>
             </items>
         </Table>
-</ScrollContainer> -->
+</ScrollContainer>
 
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
