@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+    <Dialog title="Select an Employee"  contentWidth="30%">
+        <Table items="{/EmployeeSet}">
+            <columns>
+                <Column >
+                    <Text text="Employee ID"></Text>
+                </Column>
+                 <Column >
+                    <Text text="Employee Name"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active" press="onPressRowFromF4HelpTable">
+                    <cells>
+                        <Text text="{Empid}"></Text>
+                        <Text text="{Name}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <endButton>
+            <Button text="Close" type="Reject" press="onCloseDialog"></Button>
+        </endButton>
+
+    </Dialog>
+
+
+</core:FragmentDefinition>
