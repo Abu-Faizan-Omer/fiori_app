@@ -150,10 +150,12 @@
 
              <ScrollContainer vertical="true" horizontal="true">
 
-         <Table items="{/EmployeeSet}" mode="SingleSelectLeft">
+         <Table id="idTable" items="{/EmployeeSet}" mode="SingleSelectLeft">
             <headerToolbar>
                 <Toolbar >
                     <Title text="Employee List" ></Title>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="Get Selected Employee Data" press="getSelEmpData"></Button>
                 </Toolbar>
             </headerToolbar>
             <columns>

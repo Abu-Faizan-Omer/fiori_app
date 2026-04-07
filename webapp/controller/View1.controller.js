@@ -31,6 +31,10 @@ sap.ui.define([
           },
           onSelFromRbg:function(){
             let selIndex = this.getView().byId("idRbg").getSelectedIndex()
+          },
+          getSelEmpData:function(){
+            //this is for single selection 
+            let empId = this.getView().byId("idTable").getSelectedItem().getBindingContext().getProperty("Empid")
           }
 
 
