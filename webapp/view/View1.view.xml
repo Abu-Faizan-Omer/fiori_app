@@ -150,7 +150,7 @@
 
              <ScrollContainer vertical="true" horizontal="true">
 
-         <Table id="idTable" items="{/EmployeeSet}" mode="SingleSelectLeft">
+         <Table id="idTable" items="{/EmployeeSet}" mode="MultiSelect">
             <headerToolbar>
                 <Toolbar >
                     <Title text="Employee List" ></Title>
@@ -193,7 +193,7 @@
             </columns>
 
             <items>
-                <ColumnListItem >
+                <ColumnListItem type="Active" press="onPressRow">
                     <cells>
                         
                         <Text text="{Empid}"></Text>

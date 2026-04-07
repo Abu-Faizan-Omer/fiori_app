@@ -35,6 +35,15 @@ sap.ui.define([
           getSelEmpData:function(){
             //this is for single selection 
             let empId = this.getView().byId("idTable").getSelectedItem().getBindingContext().getProperty("Empid")
+
+            //mjultiple selection
+            // let selBindingContext= this.getView().byId("idTable").getSelectedContexts()
+            // for(let i=0;i<selBindingContext.length;i++){
+            //     selBindingContext[i].getObject()
+            // }
+          },
+          onPressRow:function(oEvent){
+            var empid = oEvent.getSource().getBindingContext().getProperty("Empid")
           }
 
 
