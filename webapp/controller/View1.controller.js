@@ -68,6 +68,8 @@ sap.ui.define([
             var name = this.getView().byId("idName").getValue()
             var design = this.getView().byId("idDesign").getSelectedKey()
             var skill = this.getView().byId("idSkill").getSelectedKey()
+            var salOpr = this.getView().byId("idSalOpr").getSelectedKey()
+            var salary = this.getView().byId("idSalary").getValue()
 
             if(empId!== ""){
               aFilters.push(new Filter ("Empid","EQ",empId))
@@ -85,6 +87,10 @@ sap.ui.define([
               aFilters.push(new Filter ("Skill","EQ",skill))
 
             }
+            if(salary!== ""){
+              aFilters.push(new Filter ("Salary",salOpr,salary))
+
+            }
             this.getView().byId("idTable").getBinding("items").filter(aFilters)
           },
           onPressReset:function(){
@@ -92,6 +98,8 @@ sap.ui.define([
              this.getView().byId("idName").setValue("")
              this.getView().byId("idDesign").setSelectedKey("")
              this.getView().byId("idSkill").setSelectedKey("")
+             this.getView().byId("idSalOpr").setSelectedKey("EQ")
+             this.getView().byId("idSalary").setValue("")
             this.getView().byId("idTable").getBinding("items").filter([])
           }
 

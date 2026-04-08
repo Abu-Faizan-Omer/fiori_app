@@ -38,6 +38,17 @@
                     <core:Item text="ABAP" key="ABAP"></core:Item>
                 </items>  
                 </ComboBox>
+                <Label text="Salary"></Label>
+                <Select id="idSalOpr">
+                <items>
+                    <core:Item text="=" key="EQ"></core:Item>
+                    <core:Item text="&lt;" key="LT"></core:Item>
+                    <core:Item text="&gt;" key="GT"></core:Item>
+                    <core:Item text="&lt;=" key="LE"></core:Item>
+                    <core:Item text="&gt;=" key="GE"></core:Item>
+                </items>  
+                </Select>
+                <Input id="idSalary"></Input>
                 
                  
             </f:content>
