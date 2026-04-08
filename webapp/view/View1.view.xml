@@ -7,12 +7,14 @@
     
     <Page id="page" title="I am View1">
         <content>
+
         <Panel headerText="Search Employees" expandable="true" expanded="true">
             <f:SimpleForm  editable="true" layout="ResponsiveGridLayout"
             lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
 
             
             <f:content>
+             <core:Title text="Filters"></core:Title>
                <Label text="Employee Id"></Label>
                <Input id="idEmpId" showValueHelp="true" valueHelpRequest="onPressValueHelp"></Input>
 
@@ -212,6 +214,7 @@
                     <Title text="Employee List" ></Title>
                     <ToolbarSpacer ></ToolbarSpacer>
                     <Button text="Get Selected Employee Data" press="getSelEmpData"></Button>
+                    <Button icon="sap-icon://excel-attachment" press="onPressExportToXL"></Button>
                 </Toolbar>
             </headerToolbar>
             <columns>
@@ -240,7 +243,7 @@
                  <Column width="10rem">
                     <Text text="Date of Joining"></Text>
                 </Column>
-                 <Column width="4rem">
+                 <Column width="20rem">
                     <Text text="Rating"></Text>
                 </Column>
                  <Column width="10rem">
@@ -261,7 +264,7 @@
                         <Text text="{Phone}"></Text>
                         <Text text="{Salary}"></Text>
                         <Text text="{path:'Doj',formatter:'.f.formatDate'}"></Text>
-                        <Text text="{Rating}"></Text>
+                        <RatingIndicator value="{Rating}"></RatingIndicator>
                          <ObjectStatus text="{Status}" state="{path:'Status', formatter: '.f.colorStatus'}"></ObjectStatus>
                         
                     </cells>

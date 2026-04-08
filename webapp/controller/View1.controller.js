@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "com/demo/sapui5/model/formatter",
-     "sap/ui/model/Filter"
-], (Controller,formatter,Filter) => {
+     "sap/ui/model/Filter",
+     "sap/ui/export/Spreadsheet"
+], (Controller,formatter,Filter,Spreadsheet) => {
     "use strict";
 
     return Controller.extend("com.demo.sapui5.controller.View1", {
@@ -108,7 +109,62 @@ sap.ui.define([
              this.getView().byId("idSalary").setValue("")
              this.getView().byId("idDoj").setDateValue(null)
             this.getView().byId("idTable").getBinding("items").filter([])
-          }
+          },
+          onPressExportToXL:function(){
+            var aCols,oRowBinding,oSettings,oSheet;
+            oRowBinding = this.getView().byId('idTable').getBinding('items')
+            //place your table columns and odata properties
+            aCols = [{
+                label:'Employee Id',
+                property: 'Empid'
+            },{
+                label:'Name',
+                property: 'Name'
+            },{
+                label:'Designation',
+                property: 'Design'
+            },{
+                label:'Skill',
+                property: 'Skill'
+            },{
+                label:'Email',
+                property: 'Email'
+            },{
+                label:'Phone.No',
+                property: 'Phone'
+            },{
+                label:'Status',
+                property: 'Status'
+            },{
+                label:'Rating',
+                property: 'Rating'
+            },{
+                label:'Date of Joining',
+                property: 'Doj',
+                type:'Date',
+                format:'dd-MM-yyyy'
+            },{
+                label:'Salary',
+                property: 'Salary',
+                type:'Number',
+                delimiter:true,
+                scale:2
+            }];
+ 
+            oSettings={
+                workbook:{
+                    columns:aCols
+                },
+                dataSource: oRowBinding,
+                fileName:'Employees.xlsx',
+                worker:true
+            };
+            oSheet = new Spreadsheet(oSettings);
+            oSheet.build().finally(function(){
+                oSheet.destroy();
+            })
+ 
+        }
 
 
         //    this is for dynamic ui
