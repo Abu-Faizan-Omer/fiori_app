@@ -15,6 +15,14 @@
             <f:content>
                <Label text="Employee Id"></Label>
                <Input id="idEmpId" showValueHelp="true" valueHelpRequest="onPressValueHelp"></Input>
+
+               <Label text="Name"></Label>
+               <Input id="idName" ></Input>
+                <Label text="Designation"></Label>
+                <ComboBox id="idDesign"></ComboBox>
+               
+                <Label text="Skill"></Label>
+               <Input id="idSkill" ></Input>
                 
                  
             </f:content>
@@ -218,7 +226,7 @@
                     <cells>
                         
                         <Text text="{Empid}"></Text>
-                        <Text text="{path:'Name', formatter :'.f.formatName'}"></Text>
+                        <Text text="{Name}"></Text>
                         <Text text="{Design}"></Text>
                         
                         <ObjectStatus text="{Skill}" state="{path:'Skill', formatter: '.f.colorSkill'}"></ObjectStatus>

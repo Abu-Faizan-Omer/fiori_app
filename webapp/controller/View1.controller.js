@@ -65,15 +65,34 @@ sap.ui.define([
           onPressGo:function(){
             var aFilters = []
             var empId = this.getView().byId("idEmpId").getValue()
+            var name = this.getView().byId("idName").getValue()
+            var design = this.getView().byId("idDesign").getValue()
+            var skill = this.getView().byId("idSkill").getValue()
+
 
             if(empId!== ""){
               aFilters.push(new Filter ("Empid","EQ",empId))
+
+            }
+             if(name!== ""){
+              aFilters.push(new Filter ("Name","EQ",name))
+
+            }
+            if(design!== ""){
+              aFilters.push(new Filter ("Design","EQ",design))
+
+            }
+            if(skill!== ""){
+              aFilters.push(new Filter ("Skill","EQ",skill))
 
             }
             this.getView().byId("idTable").getBinding("items").filter(aFilters)
           },
           onPressReset:function(){
             this.getView().byId("idEmpId").setValue("")
+             this.getView().byId("idName").setValue("")
+             this.getView().byId("idDesign").setValue("")
+             this.getView().byId("idSkill").setValue("")
             this.getView().byId("idTable").getBinding("items").filter([])
           }
 
