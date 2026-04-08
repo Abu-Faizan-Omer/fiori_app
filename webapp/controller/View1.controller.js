@@ -2,8 +2,9 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "com/demo/sapui5/model/formatter",
      "sap/ui/model/Filter",
+     "sap/ui/model/Sorter",
      "sap/ui/export/Spreadsheet"
-], (Controller,formatter,Filter,Spreadsheet) => {
+], (Controller,formatter,Filter,Sorter,Spreadsheet) => {
     "use strict";
 
     return Controller.extend("com.demo.sapui5.controller.View1", {
@@ -65,6 +66,7 @@ sap.ui.define([
           },
           onPressGo:function(){
             var aFilters = []
+            var aSorters = []
             var empId = this.getView().byId("idEmpId").getValue()
             var name = this.getView().byId("idName").getValue()
             var design = this.getView().byId("idDesign").getSelectedKey()
@@ -99,6 +101,16 @@ sap.ui.define([
 
             }
             this.getView().byId("idTable").getBinding("items").filter(aFilters)
+
+            //Sort logic
+            var sortField = this.getView().byId("idSortField").getSelectedKey()
+            var sortOrder = this.getView().byId("idSortOrder").getSelectedIndex()
+
+
+             if(sortField!== "" && sortOrder!==""){
+               aSorters.push(new Sorter (sortField,(sortOrder === 0)? false:true))
+            }
+            this.getView().byId("idTable").getBinding("items").sort(aSorters)
           },
           onPressReset:function(){
             this.getView().byId("idEmpId").setValue("")
@@ -108,7 +120,10 @@ sap.ui.define([
              this.getView().byId("idSalOpr").setSelectedKey("EQ")
              this.getView().byId("idSalary").setValue("")
              this.getView().byId("idDoj").setDateValue(null)
+             this.getView().byId("idSortField").setSelectedKey("")
+             this.getView().byId("idSortOrder").setSelectedIndex(-1);
             this.getView().byId("idTable").getBinding("items").filter([])
+            this.getView().byId("idTable").getBinding("items").sort([])
           },
           onPressExportToXL:function(){
             var aCols,oRowBinding,oSettings,oSheet;

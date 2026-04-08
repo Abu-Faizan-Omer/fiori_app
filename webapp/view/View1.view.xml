@@ -10,7 +10,7 @@
 
         <Panel headerText="Search Employees" expandable="true" expanded="true">
             <f:SimpleForm  editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" columnsL="3" columnsM="2">
+            lableSpanL="4" lableSpanM="4" emptySpanL="2" emptySpanM="2">
 
             
             <f:content>
@@ -53,6 +53,26 @@
                 <Input id="idSalary"></Input>
                 <Label text="Date of Joining"></Label>
                 <DatePicker id="idDoj"></DatePicker>
+                <core:Title text="Sort"></core:Title>
+                <Label text="Sort Field"></Label>
+                <ComboBox id="idSortField">
+                    <items>
+                        <core:Item text="Employee Id" key="Empid"></core:Item>
+                        <core:Item text="Name" key="Name"></core:Item>
+                        <core:Item text="Designation" key="Design"></core:Item>
+                        <core:Item text="Skill" key="Skill"></core:Item>
+                        <core:Item text="Salary" key="Salary"></core:Item>
+                        <core:Item text="Date of Joining" key="doj"></core:Item>
+                        <core:Item text="Rating" key="Rating"></core:Item>
+                    </items>
+                </ComboBox>
+                <Label text="Sort Order"></Label>
+                <RadioButtonGroup id="idSortOrder" columns="2" selectedIndex="-1">
+                 <buttons>
+                    <RadioButton text="Ascending"></RadioButton>
+                     <RadioButton text="Descending"></RadioButton>
+                 </buttons>
+                </RadioButtonGroup>
                  
             </f:content>
         </f:SimpleForm> 
