@@ -10,7 +10,7 @@
 
         <Panel headerText="Search Employees" expandable="true" expanded="true">
             <f:SimpleForm  editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="4" lableSpanM="4" emptySpanL="2" emptySpanM="2">
+            lableSpanL="4" lableSpanM="4" emptySpanL="2" emptySpanM="2" columnsL="3" columnsM="2">
 
             
             <f:content>
@@ -72,8 +72,23 @@
                     <RadioButton text="Ascending"></RadioButton>
                      <RadioButton text="Descending"></RadioButton>
                  </buttons>
-                </RadioButtonGroup>
-                 
+                </RadioButtonGroup>       
+
+                <core:Title text="Group"></core:Title>
+                <Label text="Group Field"></Label>
+                <ComboBox id="idGroupField">
+                    <items>
+                        <core:Item text="Designation" key="Design"></core:Item>
+                        <core:Item text="Skill" key="Skill"></core:Item>
+                    </items>
+                </ComboBox>
+                <Label text="Group Order"></Label>
+                <RadioButtonGroup id="idGroupOrder" columns="2" selectedIndex="-1">
+                 <buttons>
+                    <RadioButton text="Ascending"></RadioButton>
+                     <RadioButton text="Descending"></RadioButton>
+                 </buttons>
+                </RadioButtonGroup>       
             </f:content>
         </f:SimpleForm> 
         <FlexBox justifyContent="End">

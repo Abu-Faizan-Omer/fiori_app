@@ -11,6 +11,23 @@ sap.ui.define([
         f:formatter,
         onInit() {
             this.getOwnerComponent().readEmployees();
+            //check the skill redirect to that grp
+            this.mGroupFunctions = {
+              Skill: function(oContext){
+                var skill = oContext.getProperty("Skill")
+                return {
+                  key: skill,
+                  text:skill
+                }
+              },
+               Design: function(oContext){
+                var design = oContext.getProperty("Design")
+                return {
+                  key: design,
+                  text:design
+                }
+              }
+            }
         },
         onPress: function(){
             this.getOwnerComponent().getRouter().navTo("RouteView2")
@@ -97,16 +114,23 @@ sap.ui.define([
 
             }
             if(doj!== ""){
-              aFilters.push(new Filter ("Doj",salOpr,doj))
+              aFilters.push(new Filter ("Doj",EQ,doj))
 
             }
             this.getView().byId("idTable").getBinding("items").filter(aFilters)
 
+            //Grouping logic
+            var groupField = this.getView().byId("idGroupField").getSelectedKey()
+            var groupOrder = this.getView().byId("idGroupOrder").getSelectedIndex()
+             if(groupField!== "" && groupOrder!==""){
+              var vGroup = this.mGroupFunctions[groupField]
+               aSorters.push(new Sorter (groupField,(groupOrder === 0)? false:true,vGroup))
+            }
+
+
             //Sort logic
             var sortField = this.getView().byId("idSortField").getSelectedKey()
             var sortOrder = this.getView().byId("idSortOrder").getSelectedIndex()
-
-
              if(sortField!== "" && sortOrder!==""){
                aSorters.push(new Sorter (sortField,(sortOrder === 0)? false:true))
             }
