@@ -70,6 +70,8 @@ sap.ui.define([
             var skill = this.getView().byId("idSkill").getSelectedKey()
             var salOpr = this.getView().byId("idSalOpr").getSelectedKey()
             var salary = this.getView().byId("idSalary").getValue()
+            var doj =  this.getView().byId("idDoj").getDateValue() //return date in object format
+            doj=formatter.formatDateFilter(doj)
 
             if(empId!== ""){
               aFilters.push(new Filter ("Empid","EQ",empId))
@@ -91,6 +93,10 @@ sap.ui.define([
               aFilters.push(new Filter ("Salary",salOpr,salary))
 
             }
+            if(doj!== ""){
+              aFilters.push(new Filter ("Doj",salOpr,doj))
+
+            }
             this.getView().byId("idTable").getBinding("items").filter(aFilters)
           },
           onPressReset:function(){
@@ -100,6 +106,7 @@ sap.ui.define([
              this.getView().byId("idSkill").setSelectedKey("")
              this.getView().byId("idSalOpr").setSelectedKey("EQ")
              this.getView().byId("idSalary").setValue("")
+             this.getView().byId("idDoj").setDateValue(null)
             this.getView().byId("idTable").getBinding("items").filter([])
           }
 

@@ -26,6 +26,12 @@ sap.ui.define([],function(){
                 pattern:"dd-MM-yyy"
             },sap.ui.getCore().getConfiguration().getLocale())
             return oDateFormat.format(Doj)
+        },
+        formatDateFilter:function(Doj){
+            var oDateFormat= sap.ui.core.format.DateFormat.getDateTimeInstance({
+                pattern:"yyyy-MM-dd"
+            },sap.ui.getCore().getConfiguration().getLocale())
+            return oDateFormat.format(Doj)
         }
     }
 })
