@@ -19,10 +19,25 @@
                <Label text="Name"></Label>
                <Input id="idName" ></Input>
                 <Label text="Designation"></Label>
-                <ComboBox id="idDesign"></ComboBox>
+                <ComboBox id="idDesign">
+                    <items>
+                        <core:Item text="EMPLOYEE" key="EMPLOYEE"></core:Item>
+                        <core:Item text="STUDENT" key="STUDENT"></core:Item>
+                        <core:Item text="D_MANAGER" key="D_MANAGER"></core:Item>
+                        <core:Item text="MANAGER" key="MANAGER"></core:Item>
+                        <core:Item text="CEO" key="CEO"></core:Item>
+                    </items>
+                </ComboBox>
                
                 <Label text="Skill"></Label>
-               <Input id="idSkill" ></Input>
+                <ComboBox id="idSkill">
+                <items>
+                    <core:Item text="FIORI" key="FIORI"></core:Item>
+                    <core:Item text="CAPM" key="CAPM"></core:Item>
+                    <core:Item text="BTP" key="BTP"></core:Item>
+                    <core:Item text="ABAP" key="ABAP"></core:Item>
+                </items>  
+                </ComboBox>
                 
                  
             </f:content>

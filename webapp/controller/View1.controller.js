@@ -66,9 +66,8 @@ sap.ui.define([
             var aFilters = []
             var empId = this.getView().byId("idEmpId").getValue()
             var name = this.getView().byId("idName").getValue()
-            var design = this.getView().byId("idDesign").getValue()
-            var skill = this.getView().byId("idSkill").getValue()
-
+            var design = this.getView().byId("idDesign").getSelectedKey()
+            var skill = this.getView().byId("idSkill").getSelectedKey()
 
             if(empId!== ""){
               aFilters.push(new Filter ("Empid","EQ",empId))
@@ -91,8 +90,8 @@ sap.ui.define([
           onPressReset:function(){
             this.getView().byId("idEmpId").setValue("")
              this.getView().byId("idName").setValue("")
-             this.getView().byId("idDesign").setValue("")
-             this.getView().byId("idSkill").setValue("")
+             this.getView().byId("idDesign").setSelectedKey("")
+             this.getView().byId("idSkill").setSelectedKey("")
             this.getView().byId("idTable").getBinding("items").filter([])
           }
 
