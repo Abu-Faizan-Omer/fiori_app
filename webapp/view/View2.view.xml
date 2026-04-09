@@ -11,11 +11,11 @@
           <Toolbar >
            <Title text="Employee Details"></Title>
            <ToolbarSpacer ></ToolbarSpacer>
-           <Button id="idBtnEdit" icon="sap-icon://edit" type="Emphasized" visible="false"></Button>
+           <Button id="idBtnEdit" icon="sap-icon://edit" type="Emphasized" visible="false" press="onPressEdit"></Button>
            <Button id="idBtnDisplay" icon="sap-icon://display" type="Emphasized" visible="false"></Button>
            <Button id="idBtnSave" icon="sap-icon://save" type="Accept" visible="false" press="onPressSave"></Button>
-           <Button id="idBtnCancel" icon="sap-icon://reset" type="Reject" visible="false"></Button>
-           <Button id="idBtnDelete" icon="sap-icon://delete" type="Reject" visible="false"></Button>
+           <Button id="idBtnCancel" icon="sap-icon://reset" type="Reject" visible="false" press="onPressCancel"></Button>
+           <Button id="idBtnDelete" icon="sap-icon://delete" type="Reject" visible="false" press="onPressDelete"></Button>
           </Toolbar>
         </headerToolbar>
        </Panel>
