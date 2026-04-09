@@ -7,7 +7,17 @@
     <Page id="page2" title="Employee Details" showNavButton="true" navButtonPress="onBackToView1">
      <content>
        <Panel id="idPanel">
-       
+        <headerToolbar>
+          <Toolbar >
+           <Title text="Employee Details"></Title>
+           <ToolbarSpacer ></ToolbarSpacer>
+           <Button id="idBtnEdit" icon="sap-icon://edit" type="Emphasized" visible="false"></Button>
+           <Button id="idBtnDisplay" icon="sap-icon://display" type="Emphasized" visible="false"></Button>
+           <Button id="idBtnSave" icon="sap-icon://save" type="Accept" visible="false"></Button>
+           <Button id="idBtnCancel" icon="sap-icon://reset" type="Reject" visible="false"></Button>
+           <Button id="idBtnDelete" icon="sap-icon://delete" type="Reject" visible="false"></Button>
+          </Toolbar>
+        </headerToolbar>
        </Panel>
 
 

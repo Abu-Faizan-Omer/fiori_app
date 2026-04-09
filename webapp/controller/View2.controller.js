@@ -12,9 +12,11 @@ sap.ui.define([
             if(empId ==="newemp"){
                 this.mode = "create";
                 this.getView().unbindElement()
+                this.handleBtnVisibility(this.mode)
 
             }else{
                 this.mode = "display";
+                this.handleBtnVisibility(this.mode)
                 this.getView().bindElement("/EmployeeSet('"+ empId + "')")
 
             }
@@ -36,6 +38,22 @@ sap.ui.define([
                     }
                     this.getView().byId("idPanel").addContent(this.displayfrag)
                 }
+        },
+        handleBtnVisibility:function(mode){
+            this.getView().byId("idBtnEdit").setVisible(false)
+            this.getView().byId("idBtnDisplay").setVisible(false)
+            this.getView().byId("idBtnSave").setVisible(false)
+            this.getView().byId("idBtnCancel").setVisible(false)
+            this.getView().byId("idBtnDelete").setVisible(false)
+
+            if(mode === "create"){
+                this.getView().byId("idBtnSave").setVisible(true)
+            this.getView().byId("idBtnCancel").setVisible(true)
+            }
+            else if(mode === "display"){
+                this.getView().byId("idBtnEdit").setVisible(true)
+                 this.getView().byId("idBtnDelete").setVisible(true)
+            }
         }        
     });
 });
