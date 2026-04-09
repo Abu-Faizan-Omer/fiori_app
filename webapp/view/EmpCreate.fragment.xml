@@ -3,30 +3,30 @@
 
 
 <f:SimpleForm  title="Employee Details" editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
+           emptySpanL="5" emptySpanM="5" >
 
            
              <f:content>
                 <Label text="Employee ID" required="true"></Label>
-                <Input id="idEmpId1" value="{Empid}"></Input>
+                <Input id="idEmpId2" ></Input>
                 <Label  text="Name" required="true" ></Label>
-                <Input id="idName1" value="{Name}"></Input>
+                <Input id="idName2" ></Input>
                  <Label text="Designation" required="true"></Label>
-                <Input id="idDesign1" value="{Design}"></Input>
+                <Input id="idDesign2" ></Input>
                  <Label text="Skill" required="true" ></Label>
-                <Input id="idSkill1" value="{Skill}"></Input>
+                <Input id="idSkill2" ></Input>
                  <Label text="Email" required="true"></Label>
-                <Input id="idEmail1" value="{Email}"></Input>
+                <Input id="idEmail2" ></Input>
                  <Label text="Phone No" required="true"></Label>
-                <Input id="idPhone1" value="{Phone}"></Input>
+                <Input id="idPhone2" ></Input>
                  <Label text="Salary" required="true"></Label>
-                <Input id="idSalary1" value="{Salary}"></Input>
+                <Input id="idSalary2" ></Input>
                  <Label text="Date of Joining" required="true"></Label>
-                <DatePicker id="idDoj1" dateValue="{Doj}"></DatePicker>
+                <DatePicker id="idDoj2" ></DatePicker>
                  <Label text="Status" required="true"></Label>
-                <Input id="idStatus1" value="{Status}"></Input>
+                <Input id="idStatus2" ></Input>
                  <Label text="Rating" required="true"></Label>
-                <RatingIndicator id="idRating1" value="{Rating}"></RatingIndicator>
+                <RatingIndicator id="idRating2" ></RatingIndicator>
             </f:content>
 
 </f:SimpleForm>
