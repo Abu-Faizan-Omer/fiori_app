@@ -62,6 +62,14 @@ sap.ui.define([
             //     selBindingContext[i].getObject()
             // }
           },
+
+          //this is for create and edit form logic
+          onPressCreateEmp:function(){
+             this.getOwnerComponent().getRouter().navTo("RouteView2",{
+              key:"newemp"
+            })
+          },
+
           onPressRow:function(oEvent){
             var empId = oEvent.getSource().getBindingContext().getProperty("Empid")
             //this.getView().byId("idSF").bindElement("/EmployeeSet('"+empid+"')")

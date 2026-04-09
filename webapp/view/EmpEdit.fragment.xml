@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m"
+ xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+
+
+<f:SimpleForm  title="Employee Details" editable="true" layout="ResponsiveGridLayout"
+            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
+
+           
+             <f:content>
+                <Label text="Employee ID" required="true"></Label>
+                <Input  value="{Empid}"></Input>
+                <Label text="Name" required="true" ></Label>
+                <Input value="{Name}"></Input>
+                 <Label text="Designation" required="true"></Label>
+                <Input value="{Design}"></Input>
+                 <Label text="Skill" required="true" ></Label>
+                <Input value="{Skill}"></Input>
+                 <Label text="Email" required="true"></Label>
+                <Input value="{Email}"></Input>
+                 <Label text="Phone No" required="true"></Label>
+                <Input value="{Phone}"></Input>
+                 <Label text="Salary" required="true"></Label>
+                <Input value="{Salary}"></Input>
+                 <Label text="Date of Joining" required="true"></Label>
+                <DatePicker dateValue="{Doj}"></DatePicker>
+                 <Label text="Status" required="true"></Label>
+                <Input value="{Status}"></Input>
+                 <Label text="Rating" required="true"></Label>
+                <RatingIndicator value="{Rating}"></RatingIndicator>
+            </f:content>
+
+</f:SimpleForm>
+
+</core:FragmentDefinition>

@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m"
+ xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+
+
+ <f:SimpleForm id="idSF" title="Employee Details" editable="true" layout="ResponsiveGridLayout"
+            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
+
+            <f:content>
+                <Label text="Employee ID" ></Label>
+                <Text  text="{Empid}"></Text>
+                <Label text="Name"  ></Label>
+                <Text text="{Name}"></Text>
+                 <Label text="Designation"></Label>
+                <Text text="{Design}"></Text>
+                 <Label text="Skill"  ></Label>
+                <Text text="{Skill}"></Text>
+                 <Label text="Email" ></Label>
+                <Text text="{Email}"></Text>
+                 <Label text="Phone No" ></Label>
+                <Text text="{Phone}"></Text>
+                 <Label text="Salary" ></Label>
+                <Text text="{Salary}"></Text>
+                 <Label text="Date of Joining" ></Label>
+                <Text text="{Doj}"></Text>
+                 <Label text="Status" ></Label>
+                <Text text="{Status}"></Text>
+                 <Label text="Rating" ></Label>
+                <RatingIndicator value="{Rating}"></RatingIndicator>
+            </f:content>
+
+</f:SimpleForm>
+
+</core:FragmentDefinition>

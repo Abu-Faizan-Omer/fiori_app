@@ -9,7 +9,33 @@ sap.ui.define([
         },
         onPatternMatched:function(oEvent){
             var empId = oEvent.getParameter("arguments").key;
-            this.getView().bindElement("/EmployeeSet('"+ empId +"')")
-        }
+            if(empId ==="newemp"){
+                this.mode = "create";
+                this.getView().unbindElement()
+
+            }else{
+                this.mode = "display";
+                this.getView().bindElement("/EmployeeSet('"+ empId + "')")
+
+            }
+            this.loadFragment(this.mode)
+            
+    
+            },
+            loadFragment:function(mode){
+                this.getView().byId("idPanel").removeAllContent()
+                if(mode === "create" || mode ==="edit"){
+                    if(!this.editfrag){
+                        this.editfrag= sap.ui.xmlfragment(this.getView().getId(),"com.demo.sapui5.view.EmpEdit",this)
+                    }
+                    this.getView().byId("idPanel").addContent(this.editfrag)
+                   
+                }else if(mode === "display"){
+                    if(!this.displayfrag){
+                        this.displayfrag= sap.ui.xmlfragment(this.getView().getId(),"com.demo.sapui5.view.EmpDisplay",this)
+                    }
+                    this.getView().byId("idPanel").addContent(this.displayfrag)
+                }
+        }        
     });
 });

@@ -6,33 +6,11 @@
     xmlns:core="sap.ui.core">
     <Page id="page2" title="Employee Details" showNavButton="true" navButtonPress="onBackToView1">
      <content>
-        <f:SimpleForm id="idSF" title="Employee Details" editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
+       <Panel id="idPanel">
+       
+       </Panel>
 
-            <f:content>
-                <Label text="Employee ID" ></Label>
-                <Input value="{Empid}"></Input>
-                <Label text="Name" ></Label>
-                <Input value="{Name}"></Input>
-                 <Label text="Designation" ></Label>
-                <Input value="{Design}"></Input>
-                 <Label text="Skill" ></Label>
-                <Input value="{Skill}"></Input>
-                 <Label text="Email" ></Label>
-                <Input value="{Email}"></Input>
-                 <Label text="Phone No" ></Label>
-                <Input value="{Phone}"></Input>
-                 <Label text="Salary" ></Label>
-                <Input value="{Salary}"></Input>
-                 <Label text="Date of Joining" ></Label>
-                <DatePicker dateValue="{Doj}"></DatePicker>
-                 <Label text="Status" ></Label>
-                <Input value="{Status}"></Input>
-                 <Label text="Rating" ></Label>
-                <RatingIndicator value="{Rating}"></RatingIndicator>
-            </f:content>
 
-</f:SimpleForm>
     </content>
     </Page>
 </mvc:View>
