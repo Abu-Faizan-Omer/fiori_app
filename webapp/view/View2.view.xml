@@ -14,6 +14,22 @@
                 <Input value="{Empid}"></Input>
                 <Label text="Name" ></Label>
                 <Input value="{Name}"></Input>
+                 <Label text="Designation" ></Label>
+                <Input value="{Design}"></Input>
+                 <Label text="Skill" ></Label>
+                <Input value="{Skill}"></Input>
+                 <Label text="Email" ></Label>
+                <Input value="{Email}"></Input>
+                 <Label text="Phone No" ></Label>
+                <Input value="{Phone}"></Input>
+                 <Label text="Salary" ></Label>
+                <Input value="{Salary}"></Input>
+                 <Label text="Date of Joining" ></Label>
+                <DatePicker dateValue="{Doj}"></DatePicker>
+                 <Label text="Status" ></Label>
+                <Input value="{Status}"></Input>
+                 <Label text="Rating" ></Label>
+                <RatingIndicator value="{Rating}"></RatingIndicator>
             </f:content>
 
 </f:SimpleForm>
