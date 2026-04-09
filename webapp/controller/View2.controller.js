@@ -5,10 +5,11 @@ sap.ui.define([
 
     return Controller.extend("com.demo.sapui5.controller.View2", {
         onInit() {
+            this.getOwnerComponent().getRouter().getRoute("RouteView2").attachPatternMatched(this.onPatternMatched, this);
         },
-        onBackToView1 : function(){    
-            //this.getOwnerComponent().getRouter().navTo("RouteView1")
-            history.go(-1)
+        onPatternMatched:function(oEvent){
+            var empId = oEvent.getParameter("arguments").key;
+            this.getView().bindElement("/EmployeeSet('"+ empId +"')")
         }
     });
 });

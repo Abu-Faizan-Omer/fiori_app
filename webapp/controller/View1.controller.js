@@ -63,7 +63,11 @@ sap.ui.define([
             // }
           },
           onPressRow:function(oEvent){
-            var empid = oEvent.getSource().getBindingContext().getProperty("Empid")
+            var empId = oEvent.getSource().getBindingContext().getProperty("Empid")
+            //this.getView().byId("idSF").bindElement("/EmployeeSet('"+empid+"')")
+            this.getOwnerComponent().getRouter().navTo("RouteView2",{
+              key:empId
+            })
           },
           onPressRowFromF4HelpTable:function(oEvent){
              this.empid = oEvent.getSource().getBindingContext().getProperty("Empid")

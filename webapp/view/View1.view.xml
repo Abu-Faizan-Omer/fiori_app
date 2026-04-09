@@ -10,7 +10,7 @@
 
         <Panel headerText="Search Employees" expandable="true" expanded="true">
             <f:SimpleForm  editable="true" layout="ResponsiveGridLayout"
-            lableSpanL="4" lableSpanM="4" emptySpanL="2" emptySpanM="2" columnsL="3" columnsM="2">
+            lableSpanL="4" lableSpanM="4"  columnsL="3" columnsM="2">
 
             
             <f:content>
@@ -308,6 +308,8 @@
             </items>
         </Table>
 </ScrollContainer>
+
+
 
 
         <!-- <ObjectHeader title="Faizan" number="10000" numberUnit="INR" backgroundDesign="Solid">
