@@ -8,6 +8,43 @@ sap.ui.define([
     return Controller.extend("com.demo.sapui5.controller.View2", {
         onInit() {
             this.getOwnerComponent().getRouter().getRoute("RouteView2").attachPatternMatched(this.onPatternMatched, this);
+            //pulling the prjModel
+            this.prjModel = this.getOwnerComponent().getModel("prjModel")
+            this.prjModel.setData({
+                aProjects : [
+
+                    //this will add empty input so we need to push
+                    // {
+                    //     Empid:"",
+                    //     Prjcode:"",
+                    //     Clientname:"",
+                    //     Prjname: "",
+                    //     Prjdesc:"",
+                    //     Teamsize:0
+                    // }
+                ]
+            })
+        },
+        //this will add new field in the project creation
+
+        onPressAddRow:function(){
+            this.prjModel.getData().aProjects.push( {
+                        Empid:"",
+                        Prjcode:"",
+                        Clientname:"",
+                        Prjname: "",
+                        Prjdesc:"",
+                        Teamsize:0
+                    })
+                    //it has to be refersh after push so that new item is visible
+                    this.prjModel.refresh(true)
+
+        },
+        //delete that particular input for project assign
+        onPressDeleteRow:function(oEvent){
+            var Index= oEvent.getSource().getParent().getBindingContextPath().split("/")[2]
+            this.prjModel.getData().aProjects.splice(Index,1)
+            this.prjModel.refresh(true)
         },
         onPatternMatched: function (oEvent) {
             var empId = oEvent.getParameter("arguments").key;
@@ -115,12 +152,14 @@ sap.ui.define([
                     Salary: salary,
                     Doj: doj,
                     Status: status,
-                    Rating: rating
+                    Rating: rating,
+                    //we are sending data to backend
+                    toProjects:this.prjModel.getData().aProjects
                 }
 
                 var oModel = this.getOwnerComponent().getModel()
                 oModel.create("/EmployeeSet", data, {
-                    success: function () {
+                    success: function (req,res) {
                         MessageBox.success("New Employee Created Successfully")
                     },
                     error: function (oError) {

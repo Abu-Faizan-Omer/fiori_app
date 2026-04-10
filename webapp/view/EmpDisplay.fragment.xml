@@ -30,27 +30,28 @@
 
 </f:SimpleForm>
 
- <Table items="{toProjects}">
+<ScrollContainer horizontal="true" vertical="true">
+ <Table items="{toProjects}" headerText="Project Information">
             <columns>
-            <Column >
+            <Column width="10rem">
             <Text text="Employee Id"></Text>
             </Column>
-             <Column >
+             <Column width="10rem">
             <Text text="Project Code"></Text>
             </Column>
-             <Column >
+             <Column width="10rem">
             <Text text="Client Name"></Text>
             </Column>
-             <Column >
+             <Column width="10rem">
             <Text text="Project Name"></Text>
             </Column>
-              <Column >
+              <Column width="10rem">
             <Text text="Project Description"></Text>
             </Column>
-             <Column >
+             <Column width="10rem" >
             <Text text="Team Count"></Text>
             </Column>
-            </columns>
+            </columns >
             <items>
             <ColumnListItem >
            
@@ -67,6 +68,7 @@
            
             </items>
             </Table>
+ </ScrollContainer>           
    </VBox>         
 
 </core:FragmentDefinition>
