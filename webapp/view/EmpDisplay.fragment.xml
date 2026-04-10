@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m"
  xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
 
-
+<VBox >
  <f:SimpleForm id="idSF" title="Employee Details" editable="true" layout="ResponsiveGridLayout"
             lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
 
@@ -29,5 +29,44 @@
             </f:content>
 
 </f:SimpleForm>
+
+ <Table items="{toProjects}">
+            <columns>
+            <Column >
+            <Text text="Employee Id"></Text>
+            </Column>
+             <Column >
+            <Text text="Project Code"></Text>
+            </Column>
+             <Column >
+            <Text text="Client Name"></Text>
+            </Column>
+             <Column >
+            <Text text="Project Name"></Text>
+            </Column>
+              <Column >
+            <Text text="Project Description"></Text>
+            </Column>
+             <Column >
+            <Text text="Team Count"></Text>
+            </Column>
+            </columns>
+            <items>
+            <ColumnListItem >
+           
+            <cells>
+            <Text text="{Empid}"></Text>
+            <Text text="{Prjcode}"></Text>
+            <Text text="{Clientname}"></Text>
+            <Text text="{Prjname}"></Text>
+            <Text text="{Prjdesc}"></Text>
+            <Text text="{Teamsize}"></Text>
+            </cells>
+            </ColumnListItem>
+           
+           
+            </items>
+            </Table>
+   </VBox>         
 
 </core:FragmentDefinition>
