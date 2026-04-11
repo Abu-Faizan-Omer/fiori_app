@@ -73,6 +73,9 @@
       },
       "prjModel":{
         "type":"sap.ui.model.json.JSONModel"
+      },
+      "editPrjModel":{
+        "type":"sap.ui.model.json.JSONModel"
       }
      
     },

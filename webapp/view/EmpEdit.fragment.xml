@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m"
  xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
 
-
+<VBox >
 <f:SimpleForm  title="Employee Details" editable="true" layout="ResponsiveGridLayout"
             lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
 
@@ -30,5 +30,52 @@
             </f:content>
 
 </f:SimpleForm>
+
+<Table items="{editPrjModel>/results}">
+<headerToolbar>
+  <Toolbar >
+    <Title text="Add Project"></Title>
+    <ToolbarSpacer ></ToolbarSpacer>
+    <Button icon="sap-icon://add" type="Emphasized" press="onPressAddRowForEdit"></Button>
+  </Toolbar>
+</headerToolbar>
+  <columns>
+    <Column >
+      <Text text="Employee Id"></Text>
+    </Column>
+    <Column >
+      <Text text="Project Code"></Text>
+    </Column>
+    <Column >
+      <Text text="Client Name"></Text>
+    </Column>
+    <Column >
+      <Text text="Project Name"></Text>
+    </Column>
+    <Column >
+      <Text text="Description"></Text>
+    </Column>
+     <Column >
+      <Text text="Team Size"></Text>
+    </Column>
+    <Column >
+      <Text text="Delete"></Text>
+    </Column>
+  </columns>
+  <items>
+    <ColumnListItem >
+      <cells>
+        <Input value="{editPrjModel>Empid}"></Input>
+        <Input value="{editPrjModel>Prjcode}"></Input>
+        <Input value="{editPrjModel>Clientname}"></Input>
+        <Input value="{editPrjModel>Prjname}"></Input>
+        <Input value="{editPrjModel>Prjdesc}"></Input>
+        <Input value="{editPrjModel>Teamsize}"></Input>
+        <Button icon="sap-icon://delete" type="Reject" press="onPressDeleteRowForEdit"></Button>
+      </cells>
+    </ColumnListItem>
+  </items>
+</Table>
+</VBox>
 
 </core:FragmentDefinition>

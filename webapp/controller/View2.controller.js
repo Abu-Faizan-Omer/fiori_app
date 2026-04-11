@@ -24,6 +24,31 @@ sap.ui.define([
                     // }
                 ]
             })
+
+            //for edit 
+             this.editPrjModel = this.getOwnerComponent().getModel("editPrjModel")
+            
+        },
+
+
+        onPressAddRowForEdit:function(){
+            this.editPrjModel.getData().results.push( {
+                        Empid:"",
+                        Prjcode:"",
+                        Clientname:"",
+                        Prjname: "",
+                        Prjdesc:"",
+                        Teamsize:0
+                    })
+                    //it has to be refersh after push so that new item is visible
+                    this.editPrjModel.refresh(true)
+
+        },
+
+        onPressDeleteRowForEdit:function(oEvent){
+            var Index= oEvent.getSource().getParent().getBindingContextPath().split("/")[2]
+            this.editPrjModel.getData().results.splice(Index,1)
+            this.editPrjModel.refresh(true)
         },
         //this will add new field in the project creation
 
@@ -46,6 +71,8 @@ sap.ui.define([
             this.prjModel.getData().aProjects.splice(Index,1)
             this.prjModel.refresh(true)
         },
+
+        
         onPatternMatched: function (oEvent) {
             var empId = oEvent.getParameter("arguments").key;
             if (empId === "newemp") {
@@ -117,9 +144,22 @@ sap.ui.define([
 
 
 
+        },//this is for edi, read project of each while editing
+        readProjectsOfEmp:function(){
+            var empId = this.getView().getBindingContext().getProperty("Empid")
+            var oModel = this.getOwnerComponent().getModel()
+            oModel.read("/EmployeeSet('"+empId+"')/toProjects",{
+                success:function(data){
+                    this.editPrjModel.setData(data)
+                }.bind(this),error:function(oError){
+                    MessageBox.error("Unable to fetch the Project Information")
+                }
+            })
         },
+
         //on press edit button it will disappear and save and cancel button icon is visible
         onPressEdit: function () {
+            this.readProjectsOfEmp()
             this.mode = "edit"
             this.loadFragment(this.mode)
             this.handleBtnVisibility(this.mode)
@@ -191,11 +231,13 @@ sap.ui.define([
                     Salary: salary,
                     Doj: doj,
                     Status: status,
-                    Rating: rating
+                    Rating: rating,
+                    //we are sending data to backend
+                    toProjects:this.editPrjModel.getData().results
                 }
 
                 var oModel = this.getOwnerComponent().getModel()
-                oModel.update("/EmployeeSet('" + empId + "')", data, {
+                oModel.create("/EmployeeSet", data, {
                     success: function (res) {
                         MessageBox.success("Employee Updated Successfully")
                     },
