@@ -2,6 +2,16 @@
  xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
 
 <VBox >
+ <HBox >
+  <Avatar active="true" press="onPressPhoto" src="/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet('{Empid}')/$value" displaySize="L"></Avatar>
+    <VBox class="sapUiMediumMargin">
+      <Text text="{Name}"></Text>
+      <Text text="{Design}"></Text>
+    </VBox>
+ </HBox>
+
+
+
  <f:SimpleForm id="idSF" title="Employee Details" editable="true" layout="ResponsiveGridLayout"
             lableSpanL="2" lableSpanM="2" emptySpanL="5" emptySpanM="5" >
 

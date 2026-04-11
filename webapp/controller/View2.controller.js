@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "com/demo/sapui5/model/formatter",
-    "sap/m/MessageBox"
-], (Controller, formatter, MessageBox) => {
+    "sap/m/MessageBox",
+    "sap/ui/unified/FileUploaderParameter"
+], (Controller, formatter, MessageBox , FileUploaderParameter) => {
     "use strict";
 
     return Controller.extend("com.demo.sapui5.controller.View2", {
@@ -261,6 +262,50 @@ sap.ui.define([
                         MessageBox.error(JSON.parse(oError.responseText).error.message.value)
                     }
                 })
+            },
+            // this is for file upload
+            onChangeFile:function(oEvent){
+                this.fileName = oEvent.getParameter("files")[0].name
+                this.fileType = oEvent.getParameter("files")[0].type
+            },
+            onUploadPhoto:function(){
+                var oFileUploader = this.getView().byId("idFileUploader1")
+                var empId = this.getView().byId("idEmpId1").getValue()
+                var slug = empId + ","+ this.fileName
+
+                //step 1 add slug parameter
+                oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                    name:"slug",
+                    value:slug
+                }))
+
+                //step 2 add the filetype parameter
+                oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                    name:"Content-Type",
+                    value:this.fileType
+                }))
+
+                //step 3 add CSRF Token
+                this.getOwnerComponent().getModel().refreshSecurityToken()
+                oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                    name:"x-csrf-token",
+                    value:this.getOwnerComponent().getModel().getHeaders()['x-csrf-token']
+                }))
+                oFileUploader.upload()
+            },
+            onPhotoUploadComplete:function(oEvent){
+                var status = oEvent.getParameter("status")
+                if(status === 201 || status === 202 || status === 204){
+                    MessageBox.success("Your Profile Picture Upload Successfully")
+                }else{
+                    MessageBox.error("File Upload Failed, Please check internet connectivity and try again")
+                }
+            },
+            // phoyo download when click
+            onPressPhoto:function(){
+                var empId = this.getView().getBindingContext().getProperty("Empid")
+                var url = "/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet('"+empId+"')/$value"
+                sap.m.URLHelper.redirect(url,false)
             }
 
 
