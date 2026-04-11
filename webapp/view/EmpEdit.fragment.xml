@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m"
  xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
-  xmlns:u="sap.ui.unified">
+  xmlns:u="sap.ui.unified" xmlns:up="sap.m.upload">
 
 <VBox >
 <f:SimpleForm  title="Employee Details" editable="true" layout="ResponsiveGridLayout"
@@ -89,6 +89,15 @@
 
   </f:content>
 </f:SimpleForm>
+
+<Panel headerText="Upload Resumes">
+  <up:UploadSet  id="idUploadSet" instantUpload="false" uploadUrl="/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet" 
+    uploadCompleted="onResumesUploadCompleted">
+</Panel>  
+<FlexBox justifyContent="End" >
+  <Button text="Upload Resumes" type="Emphasized" press="onUploadResumes"></Button>
+</FlexBox>
+</up:UploadSet>
 </VBox>
 
 </core:FragmentDefinition>

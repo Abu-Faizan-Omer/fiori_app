@@ -306,6 +306,44 @@ sap.ui.define([
                 var empId = this.getView().getBindingContext().getProperty("Empid")
                 var url = "/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet('"+empId+"')/$value"
                 sap.m.URLHelper.redirect(url,false)
+            },
+            //   Resume upload code
+            onUploadResumes:function(){
+                 var oUploadSet = this.getView().byId("idUploadSet")
+                var empId = this.getView().byId("idEmpId1").getValue()
+                var aIncompleteItems = oUploadSet.getIncompleteItems()
+                
+                for(let i=0;i<aIncompleteItems.length;i++){
+                    var slug = empId + "," + aIncompleteItems[i].getFileName()
+
+                    // step 1 construct slug
+                    var oSlug = new sap.ui.core.item({
+                        key:"SLUG",
+                        text:slug
+                    })
+                    oUploadSet.addHeaderField(oSlug)
+
+                     //step 2 add CSRF Token
+                     this.getOwnerComponent().getModel().refreshSecurityToken()
+                     var oXCSRFToken = new sap.ui.core.Item({
+                        key:"X-CSRF-Token",
+                        text: this.getOwnerComponent().getModel().getSecurityToken()
+                     })
+                     oUploadSet.addHeaderField(oXCSRFToken)
+
+                     //now send to backend
+                     oUploadSet.uploadItem(aIncompleteItems[i])
+
+                     oUploadSet.removeAllHeaderFields()
+                }
+            },
+            onResumesUploadCompleted:function(oEvent){
+                 var status = oEvent.getParameter("status")
+                if(status === 201 || status === 202 || status === 204){
+                    MessageBox.success("Your Resume Uploaded Successfully")
+                }else{
+                    MessageBox.error("File Upload Failed, Please check internet connectivity and try again")
+                }
             }
 
 
