@@ -78,7 +78,34 @@
            
             </items>
             </Table>
- </ScrollContainer>           
+ </ScrollContainer>  
+
+  <Table items="{toResumes}" headerText="Employee CV's">
+            <columns>
+              <Column >
+              <Text text="Employee Id"></Text>
+              </Column>
+              <Column >
+              <Text text="Resume"></Text>
+              </Column>
+              <Column >
+              <Text text="Download"></Text>
+              </Column>
+            
+            </columns >
+            <items>
+            <ColumnListItem >
+           
+            <cells>
+            <Text text="{Empid}"></Text>
+            <Text text="{Filename}"></Text>
+            <Button icon="sap-icon://download" type="Reject" press="onPressDownload"></Button>
+            </cells>
+            </ColumnListItem>
+           
+           
+            </items>
+            </Table>         
    </VBox>         
 
 </core:FragmentDefinition>

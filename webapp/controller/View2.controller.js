@@ -307,6 +307,13 @@ sap.ui.define([
                 var url = "/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet('"+empId+"')/$value"
                 sap.m.URLHelper.redirect(url,false)
             },
+            //
+            onPressDownload:function(oEvent){
+                var empId = oEvent.getSource().getParent().getBindingContext().getProperty("Empid")
+                var fileName = oEvent.getSource().getParent().getBindingContext().getProperty("Filename")
+                 var url = "/sap/opu/odata/sap/ZB70_EMP_SRV/ResumeSet(Empid='"+empId+"',Filename= '"+fileName+"')/$value"
+                sap.m.URLHelper.redirect(url,false)
+            },
             //   Resume upload code
             onUploadResumes:function(){
                  var oUploadSet = this.getView().byId("idUploadSet")
