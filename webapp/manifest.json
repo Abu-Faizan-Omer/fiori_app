@@ -112,6 +112,13 @@
           "target": [
             "TargetView2"
           ]
+        },
+        {
+          "name": "RouteView3",
+          "pattern": "view3",
+          "target": [
+            "TargetView3"
+          ]
         }
       ],
       "targets": {
@@ -122,6 +129,11 @@
         "TargetView2": {
           "id": "View2",
           "name": "View2"
+        },
+        
+        "TargetView3": {
+          "id": "View3",
+          "name": "View3"
         }
       }
     },

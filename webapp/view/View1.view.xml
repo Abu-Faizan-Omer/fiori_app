@@ -248,6 +248,7 @@
                 <Toolbar >
                     <Title text="Employee List" ></Title>
                     <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="Compare Salaries" type="Reject" press="goToChartView"></Button>
                     <Button text="Create Employee" press="onPressCreateEmp"></Button>
                     <Button icon="sap-icon://excel-attachment" press="onPressExportToXL"></Button>
                 </Toolbar>

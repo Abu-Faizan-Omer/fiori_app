@@ -1,0 +1,37 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="com.demo.sapui5.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+    <Page id="pag" title="Salary Analysis" showNavButton="true" navButtonPress="onNavBack">
+    <content>
+    <Select id="idChartType" change="onChangeCharityType" >
+        <items>
+            <core:Item text="Column Charts" key="column"></core:Item>
+            <core:Item text="Bar Charts" key="bar"></core:Item>
+            <core:Item text="Line Charts" key="line"></core:Item>
+            <core:Item text="Pie Charts" key="pie"></core:Item>
+        </items>
+    </Select>
+    <viz:VizFrame id="idVizFrame"  vizType="column" width="100%" height="100%">
+     <viz:dataset>
+        <viz.data:FlattenedDataset data="{/EmployeeSet}" >
+            <viz.data:dimensions>
+                <viz.data:DimensionDefinition name="employeeid" value="{Empid}"></viz.data:DimensionDefinition>
+                <viz.data:DimensionDefinition name="employeename" value="{Name}"></viz.data:DimensionDefinition>
+            </viz.data:dimensions>
+            <viz.data:measures>
+                <viz.data:MeasureDefinition name="salary" value="{Salary}"></viz.data:MeasureDefinition>
+            </viz.data:measures>
+        </viz.data:FlattenedDataset>
+     </viz:dataset>
+
+     <viz:feeds>
+
+        <viz.feeds:FeedItem uid="catagoryAxis" type="Dimension" values="employeeid,employeename"/>
+        <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="salary"/>
+
+     </viz:feeds>
+    </viz:VizFrame>
+    </content>
+    </Page>
+</mvc:View>

@@ -69,6 +69,10 @@ sap.ui.define([
               key:"newemp"
             })
           },
+          //charts
+          goToChartView:function(){
+            this.getOwnerComponent().getRouter().navTo("RouteView3")
+          },
 
           onPressRow:function(oEvent){
             var empId = oEvent.getSource().getBindingContext().getProperty("Empid")

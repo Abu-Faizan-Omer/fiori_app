@@ -307,7 +307,7 @@ sap.ui.define([
                 var url = "/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet('"+empId+"')/$value"
                 sap.m.URLHelper.redirect(url,false)
             },
-            //
+            // thsi if for multiple file download like resume photo
             onPressDownload:function(oEvent){
                 var empId = oEvent.getSource().getParent().getBindingContext().getProperty("Empid")
                 var fileName = oEvent.getSource().getParent().getBindingContext().getProperty("Filename")
