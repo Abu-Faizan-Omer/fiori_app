@@ -5,7 +5,7 @@
     <content>
         <f:SimpleForm  editable="true">
             <f:content>
-                <Label text="Select the file to Upload" ></Label>
+                <Label text="i18n>View4LabelText" ></Label>
                 <u:FileUploader id="fileUploader" uploadOnChange="true" buttonText="Browse" icon="sap-icon://upload" change="onSelectFile"></u:FileUploader>
             </f:content>
         </f:SimpleForm>

@@ -201,7 +201,7 @@ sap.ui.define([
                 var oModel = this.getOwnerComponent().getModel()
                 oModel.create("/EmployeeSet", data, {
                     success: function (req,res) {
-                        MessageBox.success("New Employee Created Successfully")
+                        MessageBox.success(this.getOwnerComponent(getModel("i18n").getResourceBundle().getText("onPressSaveView2Ctr"))) //for i18n 
                     },
                     error: function (oError) {
                         MessageBox.error(JSON.parse(oError.responseText).error.message.value)
