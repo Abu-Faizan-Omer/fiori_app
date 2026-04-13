@@ -68,16 +68,18 @@
         "preload": true,
         "settings": {}
       },
-      "empModel":{
-        "type":"sap.ui.model.json.JSONModel"
+      "empModel": {
+        "type": "sap.ui.model.json.JSONModel"
       },
-      "prjModel":{
-        "type":"sap.ui.model.json.JSONModel"
+      "prjModel": {
+        "type": "sap.ui.model.json.JSONModel"
       },
-      "editPrjModel":{
-        "type":"sap.ui.model.json.JSONModel"
+      "editPrjModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "batchModel": {
+        "type": "sap.ui.model.json.JSONModel"
       }
-     
     },
     "resources": {
       "css": [
@@ -119,6 +121,13 @@
           "target": [
             "TargetView3"
           ]
+        },
+        {
+          "name": "RouteView4",
+          "pattern": "view4",
+          "target": [
+            "TargetView4"
+          ]
         }
       ],
       "targets": {
@@ -130,10 +139,13 @@
           "id": "View2",
           "name": "View2"
         },
-        
         "TargetView3": {
           "id": "View3",
           "name": "View3"
+        },
+        "TargetView4": {
+          "id": "View4",
+          "name": "View4"
         }
       }
     },
@@ -143,5 +155,9 @@
       "id": "App",
       "async": true
     }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "comdemosapui5"
   }
 }

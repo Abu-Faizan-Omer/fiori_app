@@ -90,14 +90,14 @@
   </f:content>
 </f:SimpleForm>
 
-<Panel headerText="Upload Resumes">
+<!-- <Panel headerText="Upload Resumes">
   <up:UploadSet  id="idUploadSet" instantUpload="false" uploadUrl="/sap/opu/odata/sap/ZB70_EMP_SRV/PhotoSet" 
     uploadCompleted="onResumesUploadCompleted">
 </Panel>  
 <FlexBox justifyContent="End" >
   <Button text="Upload Resumes" type="Emphasized" press="onUploadResumes"></Button>
 </FlexBox>
-</up:UploadSet>
+</up:UploadSet> -->
 </VBox>
 
 </core:FragmentDefinition>

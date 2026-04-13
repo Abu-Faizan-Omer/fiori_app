@@ -73,6 +73,10 @@ sap.ui.define([
           goToChartView:function(){
             this.getOwnerComponent().getRouter().navTo("RouteView3")
           },
+          //batch opr
+          goBatchOprView:function(){
+            this.getOwnerComponent().getRouter().navTo("RouteView4")
+          },
 
           onPressRow:function(oEvent){
             var empId = oEvent.getSource().getBindingContext().getProperty("Empid")
